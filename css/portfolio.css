@@ -17,14 +17,11 @@ body {
   --btn-hover: rgba(33, 150, 243, 1);
   --btn-color: rgba(245, 244, 250, 1);
   --project-overlay: rgba(33, 150, 243, 0.9);
+  --project-title: rgba(33, 33, 33, 1);
+  --project-text: rgba(117, 117, 117, 1);
 }
 
-.container {
-  width: 1200px;
-  margin: 0px auto;
-  padding: 0px 15px;
-}
-
+/*hidden title*/
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -32,14 +29,20 @@ body {
   margin: -1px;
   border: 0;
   padding: 0;
-
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
 
-/*сброс*/
+/*div container*/
+.container {
+  width: 1200px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+/*reset*/
 h1,
 h2,
 h3,
@@ -57,7 +60,7 @@ img {
 
 ul {
   list-style: none;
-  padding: 0;
+  padding: 0px;
   margin: 0;
 }
 
@@ -65,15 +68,16 @@ a {
   text-decoration: none;
 }
 
-/*Навигация*/
-.nav-contact {
-  color: rgba(117, 117, 117, 1);
-  text-decoration: none;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.02em;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*styles*/
+/*navigation*/
+header {
+  border-bottom: 1px solid rgba(236, 236, 236, 1);
 }
 
 .page-nav,
@@ -82,17 +86,26 @@ a {
   display: flex;
 }
 
-.contacts-list {
-  margin-left: 305px;
-}
-
 .page-nav {
   align-items: center;
   min-height: 80px;
 }
 
-header {
-  border-bottom: 1px solid rgba(236, 236, 236, 1);
+.logo {
+  color: rgba(33, 33, 33, 1);
+  text-decoration: none;
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 31px;
+  letter-spacing: 0.03em;
+  margin-right: 43px;
+}
+
+.web {
+  color: rgba(33, 150, 243, 1);
+  text-decoration: none;
 }
 
 .nav-list li:first-child {
@@ -104,18 +117,12 @@ header {
   margin-left: 50px;
 }
 
-.nav-contact:hover {
-  color: rgba(33, 150, 243, 1);
+.nav-list .nav-link.current {
+  color: var(--hover-color);
 }
 
-.nav-contact:focus {
-  color: rgba(33, 150, 243, 1);
-}
-
-.nav-contact {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.nav-list .nav-link.current::after {
+  opacity: 1;
 }
 
 .nav-link {
@@ -145,44 +152,38 @@ header {
   transform: translateY(1px);
 }
 
-.nav-list .nav-link.current {
-  color: var(--hover-color);
-}
-
-.nav-list .nav-link.current::after {
-  opacity: 1;
-}
-
 .nav-link:hover,
 .nav-link:focus {
   color: rgba(33, 150, 243, 1);
 }
 
-.nav-link:hover {
-  color: rgba(33, 150, 243, 1);
+.contacts-list {
+  margin-left: 305px;
 }
 
-.nav-link:focus {
-  color: rgba(33, 150, 243, 1);
-}
-
-.logo {
-  color: rgba(33, 33, 33, 1);
+.nav-contact {
+  color: rgba(117, 117, 117, 1);
   text-decoration: none;
-  font-family: Raleway, sans-serif;
   font-style: normal;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 31px;
-  letter-spacing: 0.03em;
-  margin-right: 43px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.web {
+.nav-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-contact:hover,
+.nav-contact:focus {
   color: rgba(33, 150, 243, 1);
-  text-decoration: none;
 }
 
+/*svg contacts navigation*/
 .nav-mail {
   width: 16px;
   height: 12px;
@@ -198,7 +199,12 @@ header {
   fill: currentColor;
 }
 
-/*герой*/
+/*hero*/
+.hero {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
 .hero-list {
   display: flex;
   justify-content: center;
@@ -237,11 +243,6 @@ header {
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
 .hero-btn:hover,
 .hero-btn:focus {
   color: var(--white-text);
@@ -250,9 +251,63 @@ header {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
+/*projects*/
+.project-list {
+  margin-top: 50px;
+}
+
+.project-group {
+  display: flex;
+}
+
+.project-group:nth-child(2) {
+  margin: 30px 0px;
+}
+
+.project-item {
+  border: 1px solid #eeeeee;
+}
+
+.project-item:nth-child(2) {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.project-item:nth-child(5) {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.project-item:nth-child(8) {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
 .project-link {
   display: block;
   position: relative;
+}
+
+.project-link {
+  display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-link:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.project-link:hover .project-overlay,
+.project-link:focus .project-overlay {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.project-link:hover,
+.project-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .project-thumb {
@@ -260,6 +315,7 @@ header {
   overflow: hidden;
 }
 
+/*overlay*/
 .project-overlay {
   position: absolute;
   top: 0;
@@ -281,35 +337,14 @@ header {
   letter-spacing: 0.03em;
   color: var(--white-text);
 }
+/*overlay end*/
 
-.project-link:hover .project-overlay,
-.project-link:focus .project-overlay {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.project-link:hover,
-.project-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.project-item {
-  border: 1px solid #eeeeee;
-}
-
-.project-link {
-  display: block;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-link:hover {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+.project-card-text {
+  padding: 20px 24px;
 }
 
 .project-title {
-  color: rgba(33, 33, 33, 1);
+  color: var(--project-title);
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -318,7 +353,7 @@ header {
 }
 
 .project-text {
-  color: rgba(117, 117, 117, 1);
+  color: var(--project-text);
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -326,65 +361,7 @@ header {
   letter-spacing: 0.03em;
 }
 
-.project-card-text {
-  padding: 20px 24px;
-}
-
-.project-item:nth-child(2) {
-  margin-right: 30px;
-  margin-left: 30px;
-}
-
-.project-item:nth-child(5) {
-  margin-right: 30px;
-  margin-left: 30px;
-}
-
-.project-item:nth-child(8) {
-  margin-right: 30px;
-  margin-left: 30px;
-}
-
-.project-group {
-  display: flex;
-}
-
-.project-list {
-  margin-top: 50px;
-}
-
-.project-group:nth-child(2) {
-  margin: 30px 0px;
-}
-
-/*футер*/
-.logo-studio {
-  color: rgba(255, 255, 255, 1);
-}
-
-.link {
-  color: rgba(255, 255, 255, 0.6);
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-}
-
-.logo-footer {
-  color: rgba(33, 33, 33, 1);
-  text-decoration: none;
-  font-family: Raleway, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 26px;
-  line-height: 31px;
-  letter-spacing: 0.03em;
-  margin-bottom: 20px;
-  display: block;
-}
-
+/*footer*/
 .footer-back {
   background-color: var(--back-color);
   height: 252px;
@@ -392,7 +369,28 @@ header {
   padding-bottom: 60px;
 }
 
-/*адрес*/
+.footer-text {
+  display: flex;
+  align-items: baseline;
+}
+
+.logo-footer {
+  color: rgba(33, 33, 33, 1);
+  text-decoration: none;
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 31px;
+  letter-spacing: 0.03em;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.logo-studio {
+  color: rgba(255, 255, 255, 1);
+}
+
 .main-address {
   color: rgba(255, 255, 255, 1);
   font-style: normal;
@@ -403,10 +401,20 @@ header {
 }
 
 .footer-contact:first-child {
-  margin-bottom: 9px;
-  margin-top: 9px;
+  margin: 9px 0px;
 }
 
+.address-link {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+/*svg footer*/
 .enjoy-head {
   font-style: normal;
   font-weight: bold;
@@ -428,11 +436,6 @@ header {
   margin-top: 20px;
 }
 
-.footer-text {
-  display: flex;
-  align-items: baseline;
-}
-
 .enjoy-item {
   display: flex;
   justify-content: center;
@@ -451,12 +454,8 @@ header {
   fill: currentColor;
 }
 
-.enjoy-item:hover {
+.enjoy-item:hover,
+.enjoy-item:focus {
+  color: var(--white-text);
   background-color: var(--hover-color);
 }
-
-.enjoy-item:hover {
-  color: var(--white-text);
-}
-
-/*overlay*/

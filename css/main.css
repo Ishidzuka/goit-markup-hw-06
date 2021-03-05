@@ -40,6 +40,9 @@ body {
   --background-modal: #ffffff;
   --close-button: #000000;
   --team-back: rgba(245, 244, 250, 1);
+  --address-color-link: rgba(255, 255, 255, 0.6);
+  --main-address-color: rgba(255, 255, 255, 1);
+  --footer-studio: rgba(255, 255, 255, 1);
 }
 
 /*reset*/
@@ -69,7 +72,6 @@ a {
 }
 
 /*styles*/
-
 /*navigation*/
 header {
   border-bottom: 1px solid rgba(236, 236, 236, 1);
@@ -607,7 +609,7 @@ header {
 }
 
 .address-link {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--address-color-link);
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
