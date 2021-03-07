@@ -244,6 +244,7 @@ header {
   color: var(--white-text);
   padding: 10px 32px;
   margin-top: 30px;
+  border: none;
 }
 
 .bus-button {
@@ -725,6 +726,12 @@ header {
   border: 1px solid var(--form-border-color);
   border-radius: 4px;
   margin-bottom: 10px;
+  outline: none;
+}
+
+.call-me-form input:hover,
+.call-me-form input:focus {
+  border-color: var(--hover-color);
 }
 
 .call-me-form textarea {
@@ -733,6 +740,12 @@ header {
   border: 1px solid var(--form-border-color);
   border-radius: 4px;
   resize: none;
+  outline: none;
+}
+
+.call-me-form textarea:hover,
+.call-me-form textarea:focus {
+  border-color: var(--hover-color);
 }
 
 .call-me-titles {
@@ -791,6 +804,7 @@ header {
   border-radius: 50%;
   background-color: var(--background-modal);
   fill: currentColor;
+  outline: none;
 }
 
 .close-button:hover,
