@@ -219,22 +219,31 @@
             </div>
         </div>
 </div>
-</footer>
 <div data-modal class="backdrop is-hidden">
-<div class="modal">
-    <h2 class="call-me">Оставьте свои данные, мы вам перезвоним</h2>
-    <form class="call-me-form">
-        <label class="call-me-name">Имя
-            <input type="name" id="name">
-        </label>
-    </form>
-    <button data-modal-close class="close-button" type="button">
-    <svg class="modal-close-icon" width="18" height="18" aria-label="close">
-        <use href="./images/mainsprite.svg#icon-close"></use>
-    </svg>
-</button>
+    <div class="modal">
+        <h2 class="call-me">Оставьте свои данные, мы вам перезвоним</h2>
+        <form class="call-me-form">
+            <label for="name" class="call-me-titles">Имя</label>
+            <input type="name" name="name" id="name">
+
+            <label for="tel" class="call-me-titles">Телефон</label>
+            <input type="tel" name="tel" id="tel">
+
+            <label for="mail" class="call-me-titles">Почта</label>
+            <input type="email" name="mail" id="mail">
+
+            <label for="commentary" class="call-me-titles">Комментарий</label>
+            <textarea name="text" id="commentary"></textarea>
+
+        </form>
+        <button data-modal-close class="close-button" type="button">
+            <svg class="modal-close-icon" width="18" height="18" aria-label="close">
+                <use href="./images/mainsprite.svg#icon-close"></use>
+            </svg>
+        </button>
+    </div>
 </div>
-</div>
+</footer>
 <script src="./js/modal.js"></script>
 </body>
 </html>

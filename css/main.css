@@ -710,11 +710,32 @@ header {
   color: var(--h-color);
 }
 
+.call-me-form {
+  margin-top: 12px;
+}
+
 .call-me-form input {
   width: 448px;
   height: 40px;
   border: 1px solid var(--form-border-color);
   border-radius: 4px;
+}
+
+.call-me-form textarea {
+  width: 448px;
+  height: 120px;
+  border: 1px solid var(--form-border-color);
+  border-radius: 4px;
+  resize: none;
+}
+
+.call-me-titles {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: var(--gray-text);
 }
 
 .close-button {
