@@ -744,7 +744,7 @@ header {
   color: var(--gray-text);
 }
 
-.checkbox {
+.submit-form {
   width: 423px;
   height: 24px;
   text-align: center;
