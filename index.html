@@ -221,32 +221,59 @@
 </div>
 <div data-modal class="backdrop is-hidden">
     <div class="modal">
-        <h2 class="call-me">Оставьте свои данные, мы вам перезвоним</h2>
-        <form class="call-me-form">
-            <label for="name" class="call-me-titles">Имя</label>
-            <input type="name" name="name" id="name">
-
-            <label for="tel" class="call-me-titles">Телефон</label>
-            <input type="tel" name="tel" id="tel">
-
-            <label for="mail" class="call-me-titles">Почта</label>
-            <input type="email" name="mail" id="mail">
-
-            <label for="commentary" class="call-me-titles">Комментарий</label>
-            <textarea name="text" id="commentary"></textarea>
-        </form>
-        <form class="submit-form">
-            <input type="checkbox" name="terms" id="terms">
-            <label for="terms" class="call-me-titles">
-                Соглашаюсь с рассылкой и принимаю<a href="#" class="checkbox-terms">Условия договора</a>
-            </label>
-            <button type="submit" class="submit-button">Отправить</button>
-        </form>
         <button data-modal-close class="close-button" type="button">
             <svg class="modal-close-icon" width="18" height="18" aria-label="close">
                 <use href="./images/mainsprite.svg#icon-close"></use>
             </svg>
         </button>
+        <h2 class="call-me">Оставьте свои данные, мы вам перезвоним</h2>
+        <form class="call-me-form">
+            
+            <div class="person-form">
+            <label for="name" class="call-me-titles">Имя</label>
+            <span class="icon-form">
+                <svg width="18" height="18">
+                    <use href="./images/mainsprite.svg#person-form"></use>
+                </svg>
+            </span>
+            <input type="name" name="name" id="name">
+            </div>
+            
+            <div class="person-form">
+            <label for="tel" class="call-me-titles">Телефон</label>
+            <span class="icon-form">
+                <svg width="18" height="18">
+                    <use href="./images/mainsprite.svg#phone-form"></use>
+                </svg>
+            </span>
+            <input type="tel" name="tel" id="tel">
+            </div>
+            
+            <div class="person-form">
+            <label for="mail" class="call-me-titles">Почта</label>
+            <span class="icon-form">
+                <svg width="18" height="18">
+                    <use href="./images/mainsprite.svg#email-form"></use>
+                </svg>
+            </span>
+            <input type="email" name="mail" id="mail">
+            </div>
+            
+            <label for="commentary" class="call-me-titles">Комментарий</label>
+            <textarea name="text" id="commentary"></textarea>
+        
+            <label for="terms" class="call-me-titles">
+                Соглашаюсь с рассылкой и принимаю<a href="#" class="checkbox-terms">Условия договора</a>
+            </label>
+            <span class="icon-form">
+                <svg width="18" height="18">
+                    <use href="./images/mainsprite.svg#check-form"></use>
+                </svg>
+            </span>
+            <div class="submit-form">
+                <button type="submit" class="submit-button">Отправить</button>
+            </div>
+        </form>
     </div>
 </div>
 </footer>
