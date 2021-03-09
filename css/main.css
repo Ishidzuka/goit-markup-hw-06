@@ -46,6 +46,9 @@ body {
   --form-border-color: rgba(33, 33, 33, 0.2);
   --checkbox-color: rgba(33, 150, 243, 1);
   --submit-color: rgba(24, 140, 232, 1);
+  --commentary-form: rgba(117, 117, 117, 0.5);
+  --agreement-text: #757575;
+  --checkbox-border: rgba(33, 33, 33, 1);
 }
 
 /*reset*/
@@ -712,9 +715,10 @@ header {
   line-height: 23px;
   letter-spacing: 0.03em;
   color: var(--h-color);
+  margin-bottom: 12px;
 }
 
-.call-me-form input {
+.call-me-form .person-form input {
   width: 448px;
   height: 40px;
   border: 1px solid var(--form-border-color);
@@ -736,11 +740,31 @@ header {
   border-radius: 4px;
   resize: none;
   outline: none;
+  display: block;
+  padding: 12px 16px;
+}
+
+.call-me-form textarea::placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: var(--commentary-form);
+}
+
+.call-me-form label {
+  margin-bottom: 4px;
+  display: block;
 }
 
 .call-me-form textarea:focus {
   border-color: var(--hover-color);
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.person-form {
+  margin-bottom: 10px;
 }
 
 .call-me-titles {
@@ -752,33 +776,59 @@ header {
   color: var(--gray-text);
 }
 
-.person-form {
+.person-frame {
   position: relative;
-  z-index: 1;
+  height: 40px;
 }
 
 .icon-form {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
   display: inline-block;
   width: 18px;
   height: 18px;
+}
+
+.person-checkbox {
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+  color: var(--agreement-text);
+  margin-top: 20px;
+  display: flex;
+  align-items: baseline;
+}
+
+.agree-text {
+  position: relative;
+  padding-left: 36px;
+}
+
+.agree-input {
   position: absolute;
-  z-index: 2;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-.call-me-form label {
-  margin-bottom: 4px;
-  display: block;
+.agree-checkbox {
+  position: absolute;
+  top: 5px;
+  left: 13px;
+  width: 16px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: none;
+  border: 2px solid var(--checkbox-border);
+  border-radius: 2px;
 }
 
-.checkbox-terms {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 0.8;
-  letter-spacing: 0.01em;
-  color: var(--checkbox-color);
-  border-bottom: 1px solid currentColor;
-  display: inline-block;
+.agree-checkbox:focus {
+  fill: #2196f3;
 }
 
 .submit-button {
