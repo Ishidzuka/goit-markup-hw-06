@@ -19,6 +19,7 @@ body {
   --project-overlay: rgba(33, 150, 243, 0.9);
   --project-title: rgba(33, 33, 33, 1);
   --project-text: rgba(117, 117, 117, 1);
+  --subscribe-border: rgba(255, 255, 255, 0.3);
 }
 
 /*hidden title*/
